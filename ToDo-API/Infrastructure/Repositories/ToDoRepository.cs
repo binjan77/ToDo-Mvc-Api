@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 using ToDo_API.Models;
 using System.Data;
 

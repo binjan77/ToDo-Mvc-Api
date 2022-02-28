@@ -49,9 +49,9 @@ namespace ToDo_Mvc_App.Controllers
                     toDos = JsonConvert.DeserializeObject<List<ToDoViewModel>>(results);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                throw;
             }
 
             return View(toDos);
@@ -92,7 +92,7 @@ namespace ToDo_Mvc_App.Controllers
             }
             catch
             {
-
+                throw;
             }
 
             return View();
@@ -117,7 +117,7 @@ namespace ToDo_Mvc_App.Controllers
                     toDo = JsonConvert.DeserializeObject<ToDoViewModel>(results);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -154,7 +154,7 @@ namespace ToDo_Mvc_App.Controllers
             }
             catch
             {
-
+                throw;
             }
 
             return View();
@@ -179,9 +179,9 @@ namespace ToDo_Mvc_App.Controllers
                     toDo = JsonConvert.DeserializeObject<ToDoViewModel>(results);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                throw;
             }
 
             return View(toDo);
@@ -202,9 +202,9 @@ namespace ToDo_Mvc_App.Controllers
                     return RedirectToAction(nameof(Index));
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                throw;
             }
 
             return View();
