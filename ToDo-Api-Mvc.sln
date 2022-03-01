@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo-Mvc-App", "ToDo-Mvc-App\ToDo-Mvc-App.csproj", "{47D05689-E377-4FFF-AF32-381467108709}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo-API", "ToDo-API\ToDo-API.csproj", "{82A016F8-E2F6-4C21-B4CC-3035DA056D7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDo-API", "ToDo-API\ToDo-API.csproj", "{82A016F8-E2F6-4C21-B4CC-3035DA056D7D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C7DE03ED-463C-4556-96AB-AF9396BB9AE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{82A016F8-E2F6-4C21-B4CC-3035DA056D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82A016F8-E2F6-4C21-B4CC-3035DA056D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82A016F8-E2F6-4C21-B4CC-3035DA056D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7DE03ED-463C-4556-96AB-AF9396BB9AE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7DE03ED-463C-4556-96AB-AF9396BB9AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7DE03ED-463C-4556-96AB-AF9396BB9AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7DE03ED-463C-4556-96AB-AF9396BB9AE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

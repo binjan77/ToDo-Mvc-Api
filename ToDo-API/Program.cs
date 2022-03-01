@@ -14,10 +14,6 @@ namespace ToDo_API
     {
         public static void Main(string[] args)
         {
-            // Binjan; v1.9.1.0; 201/10/04; this line is newly added to solve issue to download images
-            // e.g. http://www.rightmove.co.uk/overseas-property/find/Beverywherecom/UK.html?locationIdentifier=BRANCH%5E88684
-            ServicePointManager.SecurityProtocol =                                          SecurityProtocolType.Tls13;
-
             CreateHostBuilder(args).Build().Run();
         }
 

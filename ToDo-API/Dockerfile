@@ -7,12 +7,14 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
     #(diff -u /etc/ssl/openssl.cnf.ORI /etc/ssl/openssl.cnf || exit 0)
 RUN sed -i 's/DEFAULT@SECLEVEL=2/DEFAULT@SECLEVEL=1/g' /etc/ssl/openssl.cnf
 WORKDIR /app
+WORKDIR /app
 EXPOSE 80
 EXPOSE 443
+EXPOSE 5101
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["ToDo-API.csproj", "ToDo-API/"]
+COPY ["ToDo-API/ToDo-API.csproj", "ToDo-API/"]
 RUN dotnet restore "ToDo-API/ToDo-API.csproj"
 COPY . .
 WORKDIR "/src/ToDo-API"

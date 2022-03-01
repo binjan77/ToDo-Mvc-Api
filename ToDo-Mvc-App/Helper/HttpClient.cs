@@ -18,7 +18,7 @@ namespace ToDo_Mvc_App.Helper
             try
             {
                 var client = new HttpClient();
-                client.BaseAddress = new Uri(_configuration["ToDoApiUrl"]);
+                client.BaseAddress = new Uri(Environment.GetEnvironmentVariable("ToDoApiUrl"));
                 return client;
             }
             catch (Exception ex)

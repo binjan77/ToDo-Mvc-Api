@@ -38,7 +38,7 @@ namespace ToDo_Mvc_App.Controllers
             try
             {
                 HttpClient client = _toDoApi.Init();
-                HttpResponseMessage responseMessage = await client.GetAsync("/api/todo");
+                HttpResponseMessage responseMessage = await client.GetAsync("api/todo");
 
                 if (responseMessage.IsSuccessStatusCode)
                 {

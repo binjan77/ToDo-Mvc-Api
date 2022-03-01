@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  todo-api:
+    image: ${DOCKER_REGISTRY-}todoapi
+    build:
+      context: .
+      dockerfile: ToDo-API/Dockerfile
+    ports:
+      - 5101:80
+
+  todo-mvc-app:
+    image: ${DOCKER_REGISTRY-}todomvcapp
+    environment:
+      - ToDoApiUrl=http://todo-api/
+    build:
+      context: .
+      dockerfile: ToDo-Mvc-App/Dockerfile
