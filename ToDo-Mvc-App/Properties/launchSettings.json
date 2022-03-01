@@ -11,9 +11,10 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "/todo/index",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ToDoApiUrl": "http://localhost:5101/"
+        "ToDoApiUrl": "https://localhost:44331/"
       }
     },
     "ToDo_Mvc_App": {

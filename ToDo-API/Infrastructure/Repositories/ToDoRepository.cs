@@ -176,7 +176,7 @@ namespace ToDo_API.Repository
                     return result > 0;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

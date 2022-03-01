@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text.Json;
 using System.Threading.Tasks;
 using ToDo_Mvc_App.Helper;
 using ToDo_Mvc_App.Models;
@@ -119,7 +118,7 @@ namespace ToDo_Mvc_App.Controllers
             }
             catch (Exception)
             {
-
+                throw;
             }
 
             return View(toDo);
