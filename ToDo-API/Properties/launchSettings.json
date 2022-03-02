@@ -14,7 +14,8 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ConnectionString": "Data Source=192.168.19.125\\SQLEXPRESS2017;Initial Catalog=ToDo;User ID=SA;Password=SA4sql2017;MultipleActiveResultSets=True;"
       }
     },
     "ToDo_API": {

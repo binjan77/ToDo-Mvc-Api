@@ -20,10 +20,7 @@ namespace ToDo_API.Repository
             try
             {
                 // get connection string from configuration file
-                string connectionString = _configuration["ConnectionStrings:DefaultConnection"];
-
-                // get connection timeout from the configuration file
-                int connectionTimeOut = int.Parse(_configuration["ConnectionStrings:ConnectionTimeout"]);
+                string connectionString = Environment.GetEnvironmentVariable("ConnectionString");
 
                 // open the sql connection using connection string
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -33,8 +30,7 @@ namespace ToDo_API.Repository
                     // set sql command parameters
                     var sqlCommand = new SqlCommand("SELECT * FROM ToDo", connection)
                     {
-                        CommandType = CommandType.Text,
-                        CommandTimeout = connectionTimeOut
+                        CommandType = CommandType.Text
                     };
 
                     using (SqlDataReader reader = sqlCommand.ExecuteReader(CommandBehavior.CloseConnection))
@@ -83,10 +79,7 @@ namespace ToDo_API.Repository
             try
             {
                 // get connection string from configuration file
-                string connectionString = _configuration["ConnectionStrings:DefaultConnection"];
-
-                // get connection timeout from the configuration file
-                int connectionTimeOut = int.Parse(_configuration["ConnectionStrings:ConnectionTimeout"]);
+                string connectionString =  Environment.GetEnvironmentVariable("ConnectionString");
 
                 // open the sql connection using connection string
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -96,8 +89,7 @@ namespace ToDo_API.Repository
                     // set sql command parameters
                     SqlCommand sqlCommand = new SqlCommand("SELECT * FROM ToDo WHERE Id=@id", connection)
                     {
-                        CommandType = CommandType.Text,
-                        CommandTimeout = connectionTimeOut
+                        CommandType = CommandType.Text
                     };
 
                     sqlCommand.Parameters.Add(new SqlParameter("@id", id));
@@ -149,10 +141,7 @@ namespace ToDo_API.Repository
             try
             {
                 // get connection string from configuration file
-                string connectionString = _configuration["ConnectionStrings:DefaultConnection"];
-
-                // get connection timeout from the configuration file
-                int connectionTimeOut = int.Parse(_configuration["ConnectionStrings:ConnectionTimeout"]);
+                string connectionString =  Environment.GetEnvironmentVariable("ConnectionString");
 
                 // open the sql connection using connection string
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -162,8 +151,7 @@ namespace ToDo_API.Repository
                     // set sql command parameters
                     SqlCommand sqlCommand = new SqlCommand("INSERT INTO ToDo(Title, Description) VALUES(@title, @description)", connection)
                     {
-                        CommandType = CommandType.Text,
-                        CommandTimeout = connectionTimeOut,
+                        CommandType = CommandType.Text
                     };
 
                     sqlCommand.Parameters.Add(new SqlParameter("@title", toDoModel.Title));
@@ -188,10 +176,7 @@ namespace ToDo_API.Repository
             try
             {
                 // get connection string from configuration file
-                string connectionString = _configuration["ConnectionStrings:DefaultConnection"];
-
-                // get connection timeout from the configuration file
-                int connectionTimeOut = int.Parse(_configuration["ConnectionStrings:ConnectionTimeout"]);
+                string connectionString =  Environment.GetEnvironmentVariable("ConnectionString");
 
                 // open the sql connection using connection string
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -201,8 +186,7 @@ namespace ToDo_API.Repository
                     // set sql command parameters
                     SqlCommand sqlCommand = new SqlCommand("UPDATE ToDo SET Title = @title, Description = @description WHERE Id = @id", connection)
                     {
-                        CommandType = CommandType.Text,
-                        CommandTimeout = connectionTimeOut,
+                        CommandType = CommandType.Text
                     };
 
                     sqlCommand.Parameters.Add(new SqlParameter("@id", id));
@@ -229,10 +213,7 @@ namespace ToDo_API.Repository
             try
             {
                 // get connection string from configuration file
-                string connectionString = _configuration["ConnectionStrings:DefaultConnection"];
-
-                // get connection timeout from the configuration file
-                int connectionTimeOut = int.Parse(_configuration["ConnectionStrings:ConnectionTimeout"]);
+                string connectionString =  Environment.GetEnvironmentVariable("ConnectionString");
 
                 // open the sql connection using connection string
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -242,8 +223,7 @@ namespace ToDo_API.Repository
                     // set sql command parameters
                     SqlCommand sqlCommand = new SqlCommand("DELETE FROM ToDo WHERE Id = @id", connection)
                     {
-                        CommandType = CommandType.Text,
-                        CommandTimeout = connectionTimeOut,
+                        CommandType = CommandType.Text
                     };
 
                     sqlCommand.Parameters.Add(new SqlParameter("@id", id));
